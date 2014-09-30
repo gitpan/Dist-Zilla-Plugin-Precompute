@@ -1,0 +1,57 @@
+NAME
+    Dist::Zilla::Plugin::Precompute - Precompute variable values during
+    building
+
+VERSION
+    This document describes version 0.01 of Dist::Zilla::Plugin::Precompute
+    (from Perl distribution Dist-Zilla-Plugin-Precompute), released on
+    2014-09-30.
+
+SYNOPSIS
+    In "dist.ini":
+
+     [Precompute/foo]
+     code=Some::Module->_init_value;
+
+    in your module "lib/Some/Module.pm":
+
+     our $foo; # PRECOMPUTE
+
+    The generated module file:
+
+     our $foo = ["some", "value", "..."]; # PRECOMPUTE
+
+DESCRIPTION
+    This plugin can be used to precompute (or initialize) a variable's value
+    during build time and put the resulting computed value into the built
+    source code. This is useful in some cases to reduce module startup time,
+    especially if it takes some time to compute the value.
+
+SEE ALSO
+    Dist::Zilla
+
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/Dist-Zilla-Plugin-Precompute>.
+
+SOURCE
+    Source repository is at
+    <https://github.com/perlancar/perl-Dist-Zilla-Plugin-Precompute>.
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    <https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-Pre
+    compute>
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
+
+AUTHOR
+    perlancar <perlancar@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2014 by perlancar@cpan.org.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
