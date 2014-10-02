@@ -3,23 +3,40 @@ NAME
     building
 
 VERSION
-    This document describes version 0.02 of Dist::Zilla::Plugin::Precompute
+    This document describes version 0.03 of Dist::Zilla::Plugin::Precompute
     (from Perl distribution Dist-Zilla-Plugin-Precompute), released on
     2014-10-02.
 
 SYNOPSIS
     In "dist.ini":
 
-     [Precompute/foo]
+     [Precompute/FOO]
      code=Some::Module->_init_value;
+     [Precompute / Some::Module::BAR]
+     code=some Perl code
 
     in your module "lib/Some/Module.pm":
 
-     our $foo; # PRECOMPUTE
+     package Some::Module;
+     our $FOO; # PRECOMPUTE
+     our $BAR; # PRECOMPUTE
 
-    The generated module file:
+    in your module "lib/Some/OtherModule.pm":
 
-     our $foo = ["some", "value", "..."]; # PRECOMPUTE
+     package Some::OtherModule;
+     our $FOO; # PRECOMPUTE
+     our $BAR; # PRECOMPUTE
+
+    In the generated "lib/Some/Module.pm":
+
+     our $FOO = ["some", "value", "..."]; # PRECOMPUTE
+     our $BAR = "some other value"; # PRECOMPUTE
+
+    In the generated "lib/Some/OtherModule.pm" (the second precompute only
+    matches $Some::Module::BAR and not $BAR from other package):
+
+     our $FOO = ["some", "value", "..."]; # PRECOMPUTE
+     our $BAR; # PRECOMPUTE
 
 DESCRIPTION
     This plugin can be used to precompute (or initialize) a variable's value

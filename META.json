@@ -30,7 +30,10 @@
       "runtime" : {
          "requires" : {
             "Data::Dump::OneLine" : "0",
-            "Dist::Zilla" : "0"
+            "Dist::Zilla::Role::FileFinderUser" : "0",
+            "Dist::Zilla::Role::FileMunger" : "0",
+            "Moose" : "0",
+            "namespace::autoclean" : "0"
          }
       },
       "test" : {
@@ -54,7 +57,7 @@
          "web" : "https://github.com/perlancar/perl-Dist-Zilla-Plugin-Precompute"
       }
    },
-   "version" : "0.02",
+   "version" : "0.03",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.018002"
@@ -341,11 +344,6 @@
             },
             "name" : "Prereqs",
             "version" : "5.019"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Extras",
-            "name" : "lint-prereqs / assume-provided",
-            "version" : "0.01"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
