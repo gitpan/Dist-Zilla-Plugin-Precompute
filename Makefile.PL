@@ -20,6 +20,7 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Dist::Zilla::Plugin::Precompute",
   "PREREQ_PM" => {
+    "Data::Dump::OneLine" => 0,
     "Dist::Zilla" => 0
   },
   "TEST_REQUIRES" => {
@@ -28,7 +29,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -36,6 +37,7 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Data::Dump::OneLine" => 0,
   "Dist::Zilla" => 0,
   "File::Spec" => 0,
   "IO::Handle" => 0,

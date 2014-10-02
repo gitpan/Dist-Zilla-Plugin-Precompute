@@ -1,7 +1,7 @@
 package Dist::Zilla::Plugin::Precompute;
 
-our $DATE = '2014-09-30'; # DATE
-our $VERSION = '0.01'; # VERSION
+our $DATE = '2014-10-02'; # DATE
+our $VERSION = '0.02'; # VERSION
 
 use 5.010;
 use strict;
@@ -78,7 +78,7 @@ Dist::Zilla::Plugin::Precompute - Precompute variable values during building
 
 =head1 VERSION
 
-This document describes version 0.01 of Dist::Zilla::Plugin::Precompute (from Perl distribution Dist-Zilla-Plugin-Precompute), released on 2014-09-30.
+This document describes version 0.02 of Dist::Zilla::Plugin::Precompute (from Perl distribution Dist-Zilla-Plugin-Precompute), released on 2014-10-02.
 
 =head1 SYNOPSIS
 
